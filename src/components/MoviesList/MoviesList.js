@@ -1,19 +1,20 @@
 import { useLocation, Link } from 'react-router-dom';
+import {MovieList, MovieItem, ListTitle, Img} from './MoveList.styled';
 // import css from './MoviesList.module.css'
 
 
 const MoviesList = ({ movies }) => {
     const location = useLocation();
     return (
-        <ul>
+        <MovieList>
             {movies.map(
                 ({ id, title, poster_path }) =>
-                   title &&  (<li key={id}>
+                   title &&  (<MovieItem key={id}>
                     <Link
                         key={id}
                         to={`/movies/${id}`}
                         state={{ from: location }}>
-                        <img
+                        <Img
                             src={
                                 poster_path
                                     ? 'https://image.tmdb.org/t/p/w300' + poster_path
@@ -21,10 +22,10 @@ const MoviesList = ({ movies }) => {
                             width={300}
                             height={450}
                             alt={title} />
-                        <h2>{title}</h2>
+                        <ListTitle>{title}</ListTitle>
                     </Link>
-                </li>))}
-        </ul>)
+                </MovieItem>))}
+        </MovieList>)
 };
 
 

@@ -3,6 +3,7 @@ import { useLocation, useSearchParams } from "react-router-dom";
 import { fetchSearchMovies } from "services/API";
 import SearchForm from "components/SearchForm/SearchForm";
 import MoviesList from "components/MoviesList/MoviesList";
+import { MoviesWrapper } from "./Movies.styled";
 // import css from './Movies.module.css';
 
 
@@ -21,10 +22,10 @@ import MoviesList from "components/MoviesList/MoviesList";
     fetchSearchMovies(query).then(response => setMovies([...response]));
   }, [query]);
   
-  return (<div>
+  return (<MoviesWrapper>
       <SearchForm location={location} onSubmit={handleSubmit} />
       {movies.length > 0 && <MoviesList movies={movies} />}
-  </div>)
+  </MoviesWrapper>)
 };
 
 export default Movies;

@@ -1,5 +1,6 @@
 // import css from './SearchForm.module.css';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+ import { FormS, Input } from './SearchForm.styled';
 
 
 const SearchForm = ({ onSubmit }) => {
@@ -18,12 +19,12 @@ const SearchForm = ({ onSubmit }) => {
 
   return (
     <div>
-      <form action="" onSubmit={handleSubmit}>
-        <input type="text"
+      <FormS action="" onSubmit={handleSubmit}>
+        <Input type="text"
           placeholder="Search movie" autoComplete="off"
           autoFocus name="query" />
         <button type="submit">Search</button>
-      </form>
+      </FormS>
     </div>
   );
 };

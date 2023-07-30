@@ -1,6 +1,7 @@
 import { fetchTrendingMovies } from "services/API";
 import { useState, useEffect } from 'react';
 import MoviesList from "components/MoviesList/MoviesList";
+import { Container, HeeadTitle } from "./Home.styled";
 // import css from './Home.module.css';
 
 
@@ -10,10 +11,10 @@ const Home = () => {
     fetchTrendingMovies().then(response => setMovies(response))
   }, []);
   
-  return <div>
-    <h1>Trending today</h1>
+  return <Container>
+    <HeeadTitle>Trending today</HeeadTitle>
     <MoviesList movies={movies} />
-  </div>
+  </Container>
 };
 
 export default Home;

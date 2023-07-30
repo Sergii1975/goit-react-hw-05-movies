@@ -2,6 +2,7 @@ import { NavLink, Outlet, useLocation, useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Suspense, useEffect, useRef, useState } from "react";
 import { fetchMovieDetails } from "services/API";
+import { MovieContainer, MovieBox, MovieImage, MovieTitle, MovieText, DescriptionTitle } from "./MovieDetails.styled";
 // import css from './MovieDetails.module.css';
 
 
@@ -26,12 +27,12 @@ const MovieDetails = () => {
   
  
   return (
-    <div>
+    <MovieContainer>
       <Link to={backLinkLocationRef.current}> <button type="button">Go back</button></Link>
       {details && (
         <div>
-          <div>
-            <img
+          <MovieBox>
+            <MovieImage
               src={
                 poster_path
                   ? 'https://image.tmdb.org/t/p/w300' + poster_path
@@ -42,17 +43,17 @@ const MovieDetails = () => {
               alt="title"
             />
             <div>
-              <h2>{title} ({getDate})</h2>
-              <p>User score: {userScore}%</p>
-              <h3>Overview:</h3>
-              <p>{overview}</p>
-              <h3>Genres:</h3>
+              <MovieTitle>{title} ({getDate})</MovieTitle>
+              <MovieText>User score: {userScore}%</MovieText>
+              <DescriptionTitle>Overview:</DescriptionTitle>
+              <MovieText>{overview}</MovieText>
+              <DescriptionTitle>Genres:</DescriptionTitle>
               {genres?.map(genre => (
                 <li key={genre.id}>{genre.name ? genre.name : 'Unknown'}</li>))}
             </div>
-          </div>
+          </MovieBox>
           <div>
-            <h3>Additional information:</h3>
+            <DescriptionTitle>Additional information:</DescriptionTitle>
             <ul>
               <li><NavLink to="cast">Cast</NavLink></li>
               <li><NavLink to="reviews">Movie review</NavLink></li>
@@ -63,7 +64,7 @@ const MovieDetails = () => {
       <Suspense fallback={<div>Loading...</div>}>
         <Outlet />
       </Suspense>
-    </div>
+    </MovieContainer>
   );
 };
 

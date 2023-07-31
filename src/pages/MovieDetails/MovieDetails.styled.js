@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 
@@ -30,6 +31,11 @@ font-size: 16px;
     margin-bottom: 10px;
 `;
 
+export const AddWrapper = styled.ul`
+display: flex;
+list-style: none;
+`;
+
 export const DescriptionTitle = styled.h3`
  font-weight: 600;
     font-size: 24px;
@@ -38,10 +44,14 @@ export const DescriptionTitle = styled.h3`
     color: #000;
 `;
 
-// export const EditionalTitle = styled.li`
-//  font-weight: 600;
-//     font-size: 24px;
-//     line-height: 1.572;
-//     margin-bottom: 10px;
-//     color: #000;
-// `;
+export const EditionalTitle = styled(NavLink)`
+font-weight: 600;
+    font-size: 24px;
+    line-height: 1.572;
+    margin-right: 20px;
+    text-decoration: underline;
+    
+    color: #000;
+
+    &:hover{color: #0000ff};
+`;

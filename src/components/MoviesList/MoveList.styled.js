@@ -19,13 +19,13 @@ export const MovieItem = styled.li`
 export const ListTitle = styled.h2`
  font-weight: 500;
     font-size: 20px;
-    color: #0000ff;
+    color: #000;
     text-decoration: none;
     padding: 8px;
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     margin-bottom: 10px;
     
-    &:hover{color: black}
+    &:hover{color: #0000ff}
 `;
 export const Img = styled.img`
 &:hover {cursor: zoom-in};

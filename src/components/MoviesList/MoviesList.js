@@ -1,6 +1,5 @@
 import { useLocation, Link } from 'react-router-dom';
 import {MovieList, MovieItem, ListTitle, Img} from './MoveList.styled';
-// import css from './MoviesList.module.css'
 
 
 const MoviesList = ({ movies }) => {

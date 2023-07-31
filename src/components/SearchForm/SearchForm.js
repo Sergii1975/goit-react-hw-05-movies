@@ -1,6 +1,5 @@
-// import css from './SearchForm.module.css';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
- import { FormS, Input } from './SearchForm.styled';
+import { FormS, Input } from './SearchForm.styled';
 
 
 const SearchForm = ({ onSubmit }) => {

@@ -1,10 +1,8 @@
-import { NavLink, Outlet, useLocation, useParams } from "react-router-dom";
+import { Outlet, useLocation, useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Suspense, useEffect, useRef, useState } from "react";
 import { fetchMovieDetails } from "services/API";
-import { MovieContainer, MovieBox, MovieImage, MovieTitle, MovieText, DescriptionTitle } from "./MovieDetails.styled";
-// import css from './MovieDetails.module.css';
-
+import { MovieContainer, MovieBox, MovieImage, MovieTitle, MovieText, DescriptionTitle, EditionalTitle, AddWrapper } from "./MovieDetails.styled";
 
 
 const MovieDetails = () => {
@@ -25,7 +23,6 @@ const MovieDetails = () => {
       });
   }, [movieId]);
   
- 
   return (
     <MovieContainer>
       <Link to={backLinkLocationRef.current}> <button type="button">Go back</button></Link>
@@ -54,10 +51,10 @@ const MovieDetails = () => {
           </MovieBox>
           <div>
             <DescriptionTitle>Additional information:</DescriptionTitle>
-            <ul>
-              <li><NavLink to="cast">Cast</NavLink></li>
-              <li><NavLink to="reviews">Movie review</NavLink></li>
-            </ul>
+            <AddWrapper>
+              <li><EditionalTitle to="cast">Cast</EditionalTitle></li>
+              <li><EditionalTitle to="reviews">Reviews</EditionalTitle></li>
+            </AddWrapper>
           </div>
         </div>
       )}

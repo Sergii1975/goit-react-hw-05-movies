@@ -4,7 +4,6 @@ import { fetchSearchMovies } from "services/API";
 import SearchForm from "components/SearchForm/SearchForm";
 import MoviesList from "components/MoviesList/MoviesList";
 import { MoviesWrapper } from "./Movies.styled";
-// import css from './Movies.module.css';
 
 
   const Movies = () => {

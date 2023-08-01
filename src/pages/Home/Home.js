@@ -1,7 +1,7 @@
 import { fetchTrendingMovies } from "services/API";
 import { useState, useEffect } from 'react';
 import MoviesList from "components/MoviesList/MoviesList";
-import { Container, HeeadTitle } from "./Home.styled";
+import { Container, HeadTitle } from "./Home.styled";
 
 
 const Home = () => {
@@ -11,7 +11,7 @@ const Home = () => {
   }, []);
   
   return <Container>
-    <HeeadTitle>Trending today</HeeadTitle>
+    <HeadTitle>Trending today</HeadTitle>
     <MoviesList movies={movies} />
   </Container>
 };

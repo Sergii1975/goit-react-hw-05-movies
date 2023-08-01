@@ -1,5 +1,6 @@
+import PropTypes from 'prop-types';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import { FormS, Input } from './SearchForm.styled';
+import { Form, Input } from './SearchForm.styled';
 
 
 const SearchForm = ({ onSubmit }) => {
@@ -18,16 +19,19 @@ const SearchForm = ({ onSubmit }) => {
 
   return (
     <div>
-      <FormS action="" onSubmit={handleSubmit}>
+      <Form action="" onSubmit={handleSubmit}>
         <Input type="text"
           placeholder="Search movie" autoComplete="off"
           autoFocus name="query" />
         <button type="submit">Search</button>
-      </FormS>
+      </Form>
     </div>
   );
 };
 
+SearchForm.propTypes = {
+    onSubmit: PropTypes.func.isRequired,
+};
 
 Notify.init({
 width: '500px',

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const FormS = styled.form`
+export const Form = styled.form`
 display: flex;
     align-items: center;
     max-width: 600px;

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useLocation, Link } from 'react-router-dom';
 import {MovieList, MovieItem, ListTitle, Img} from './MoveList.styled';
 
@@ -27,6 +28,13 @@ const MoviesList = ({ movies }) => {
         </MovieList>)
 };
 
-
+MoviesList.propTypes = {
+  movies: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+    })
+  ),
+};
 
 export default MoviesList;

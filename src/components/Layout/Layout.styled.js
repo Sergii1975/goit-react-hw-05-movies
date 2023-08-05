@@ -26,3 +26,7 @@ export const Link = styled(NavLink)`
     background-color: #b8795e;
   }
 `;
+export const Logo = styled.p`
+  font-weight: 700;
+  margin: 0;
+`;

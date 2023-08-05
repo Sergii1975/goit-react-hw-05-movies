@@ -54,4 +54,7 @@ font-weight: 600;
     color: #000;
 
     &:hover{color: #0000ff};
+    &.active {
+    color: #0000ff;
+    
 `;

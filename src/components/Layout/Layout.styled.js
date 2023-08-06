@@ -29,4 +29,5 @@ export const Link = styled(NavLink)`
 export const Logo = styled.p`
   font-weight: 700;
   margin: 0;
+  text-transform: uppercase;
 `;
